@@ -30,7 +30,9 @@ export default function Home() {
         <Helmet>
           <title>Aura | Premium Cafe & Restaurant</title>
         </Helmet>
-        <IntroExperience onComplete={handleIntroComplete} />
+        <div className="fixed inset-0 z-[100] bg-black overflow-hidden flex items-center justify-center">
+          <IntroExperience onComplete={handleIntroComplete} />
+        </div>
       </PageTransition>
     )
   }
