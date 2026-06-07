@@ -46,7 +46,7 @@ export default function MagneticButton({
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
       className={cn(baseStyles, variants[variant], className)}
-      {...props}
+      {...(props as any)}
     >
       <span className="relative z-10 pointer-events-none uppercase tracking-widest text-xs font-bold">
         {children}
