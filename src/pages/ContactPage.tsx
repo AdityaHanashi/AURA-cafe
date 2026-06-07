@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/layout/Navbar'
 import PageTransition from '../components/layout/PageTransition'
+import Footer from '../components/layout/Footer'
 import { motion } from 'framer-motion'
 
 export default function ContactPage() {
@@ -62,6 +63,7 @@ export default function ContactPage() {
             </button>
           </motion.form>
         </div>
+        <Footer />
       </div>
     </PageTransition>
   )

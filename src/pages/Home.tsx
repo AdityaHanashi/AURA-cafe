@@ -7,6 +7,8 @@ import FeaturedSection from '../components/sections/FeaturedSection'
 import ChefSection from '../components/sections/ChefSection'
 import PageTransition from '../components/layout/PageTransition'
 
+import Footer from '../components/layout/Footer'
+
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true)
 
@@ -51,6 +53,7 @@ export default function Home() {
           <FeaturedSection />
           <ChefSection />
         </main>
+        <Footer />
       </div>
     </PageTransition>
   )

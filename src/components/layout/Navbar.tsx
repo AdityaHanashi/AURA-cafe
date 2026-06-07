@@ -43,10 +43,10 @@ export default function Navbar() {
           isScrolled ? "bg-background/80 backdrop-blur-md border-b border-white/10 py-4" : "bg-transparent py-6"
         }`}
       >
-        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between relative">
           
-          <div className="flex items-center space-x-12">
-            {/* Real Aura Effect Logo */}
+          {/* Real Aura Effect Logo - Left */}
+          <div className="flex-shrink-0">
             <Link to="/" className="flex items-center group">
               <motion.span 
                 className="text-3xl font-serif font-extrabold tracking-widest uppercase text-white"
@@ -62,25 +62,26 @@ export default function Navbar() {
                 AURA
               </motion.span>
             </Link>
-
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navLinks.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="text-sm uppercase tracking-[0.2em] font-medium text-white hover:text-primary transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
           </div>
 
-          <div className="hidden md:flex">
+          {/* Desktop Menu - Exact Center */}
+          <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 items-center space-x-8">
+            {navLinks.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className="text-sm uppercase tracking-[0.2em] font-medium text-white hover:text-primary transition-colors whitespace-nowrap"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right Button */}
+          <div className="hidden lg:flex flex-shrink-0">
             <Link 
               to="/menu"
-              className="px-6 py-3 bg-primary/10 border border-primary text-primary rounded-full text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(255,184,77,0.3)]"
+              className="px-6 py-3 bg-primary/10 border border-primary text-primary rounded-full text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(255,184,77,0.3)] whitespace-nowrap"
             >
               Order to Dine In
             </Link>
@@ -88,7 +89,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden relative z-50 p-2 text-white"
+            className="lg:hidden relative z-50 p-2 text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <div className="flex flex-col space-y-1.5">

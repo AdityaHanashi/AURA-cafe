@@ -29,6 +29,9 @@ function AnimatedRoutes() {
 
 function App() {
   useEffect(() => {
+    // Only enable Lenis on Desktop to prevent heavy lagging on phones
+    if (window.innerWidth < 1024) return;
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -53,11 +56,10 @@ function App() {
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-background">
         <main className="flex-grow">
           <AnimatedRoutes />
         </main>
-        <Footer />
       </div>
     </Router>
   )
