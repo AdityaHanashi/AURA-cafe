@@ -47,15 +47,16 @@ export default function Navbar() {
           
           <div className="flex items-center space-x-12">
             {/* Real Aura Effect Logo */}
-            <Link to="/" className="relative flex items-center group">
+            <Link to="/" className="flex items-center group">
               <motion.span 
-                className="text-3xl font-serif font-extrabold tracking-widest uppercase text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
-              >
-                AURA
-              </motion.span>
-              <motion.span 
-                className="absolute inset-0 text-primary blur-[12px] opacity-60"
-                animate={{ opacity: [0.4, 0.8, 0.4] }}
+                className="text-3xl font-serif font-extrabold tracking-widest uppercase text-white"
+                animate={{ 
+                  textShadow: [
+                    "0px 0px 10px rgba(255,255,255,0.6), 0px 0px 20px rgba(255,184,77,0.4)", 
+                    "0px 0px 15px rgba(255,255,255,0.8), 0px 0px 30px rgba(255,184,77,0.8)", 
+                    "0px 0px 10px rgba(255,255,255,0.6), 0px 0px 20px rgba(255,184,77,0.4)"
+                  ] 
+                }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
                 AURA
