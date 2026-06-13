@@ -12,15 +12,24 @@ import GallerySection from '../components/sections/GallerySection'
 import Footer from '../components/layout/Footer'
 
 export default function Home() {
-  const [showIntro, setShowIntro] = useState(true)
+  const [showIntro, setShowIntro] = useState(() => !sessionStorage.getItem('hasSeenIntro'))
 
   useEffect(() => {
-    // Check if intro has already been shown in this session
-    const hasSeenIntro = sessionStorage.getItem('hasSeenIntro')
-    if (hasSeenIntro) {
-      setShowIntro(false)
-    }
+    // Session storage check is now handled synchronously in useState initializer
   }, [])
+
+  useEffect(() => {
+    // Scroll to hash automatically when returning from other pages
+    if (!showIntro && window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      }
+    }
+  }, [showIntro])
 
   const handleIntroComplete = () => {
     setShowIntro(false)
@@ -28,13 +37,13 @@ export default function Home() {
   }
 
   return (
-    <PageTransition>
+    <>
       <Helmet>
         <title>Premium Cafe & Restaurant | Aura</title>
         <meta name="description" content="Experience the finest culinary creations in our premium cafe and restaurant." />
       </Helmet>
       
-      {/* Intro Overlay */}
+      {/* Intro Overlay - Mounts immediately without fade-in */}
       <AnimatePresence>
         {showIntro && (
           <motion.div 
@@ -48,16 +57,18 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Main Content (Always Mounted) */}
-      <div className="bg-background min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-grow">
-          <Hero playAnimation={!showIntro} />
-          <FeaturedSection />
-          <ChefSection />
-          <GallerySection />
-        </main>
-        <Footer />
-      </div>
-    </PageTransition>
+      <PageTransition>
+        <div className="bg-background min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow">
+            <Hero playAnimation={!showIntro} />
+            <FeaturedSection />
+            <ChefSection />
+            <GallerySection />
+          </main>
+          <Footer />
+        </div>
+      </PageTransition>
+    </>
   )
 }

@@ -63,14 +63,14 @@ export default function IntroExperience({ onComplete }: IntroProps) {
       >
         <motion.div 
           className="relative w-full h-full flex items-center justify-center"
-          initial={{ rotateX: 50, scale: 1.5, y: 100 }}
+          initial={{ rotateX: 60, scale: 0.1, y: -600 }}
           animate={{ 
-            rotateX: phase === 'complete' ? 20 : 50,
-            scale: phase === 'complete' ? 2.5 : 1.5,
-            y: phase === 'complete' ? 0 : 100,
+            rotateX: phase === 'complete' ? 10 : 30,
+            scale: phase === 'complete' ? 5 : 1.2,
+            y: phase === 'complete' ? 200 : 0,
             opacity: phase === 'complete' ? 0 : 1
           }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
+          transition={{ duration: phase === 'complete' ? 1 : 1.8, ease: "easeOut" }}
           style={{ transformStyle: 'preserve-3d' }}
         >
           {/* Main Pizza Body */}

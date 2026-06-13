@@ -5,6 +5,11 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>landing-page</title>
+    <!-- Preload critical large assets to prevent lag -->
+    <link rel="preload" href="/pizza.png" as="image" fetchpriority="high" />
+    <link rel="preload" href="/bg_burger.png" as="image" />
+    <link rel="preload" href="/bg_juice.png" as="image" />
+    <link rel="preload" href="/bg_cake.png" as="image" />
   </head>
   <body>
     <div id="root"></div>
