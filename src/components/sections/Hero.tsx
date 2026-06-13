@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Hero() {
+export default function Hero({ playAnimation = true }: { playAnimation?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLHeadingElement>(null)
   const { scrollY } = useScroll()
@@ -15,11 +15,13 @@ export default function Hero() {
   const opacity = useTransform(scrollY, [0, 500], [1, 0])
 
   useEffect(() => {
-    gsap.fromTo('.hero-fade-in', 
-      { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: 'power3.out', delay: 1.5 }
-    )
-  }, [])
+    if (playAnimation) {
+      gsap.fromTo('.hero-fade-in', 
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: 'power3.out', delay: 0.5 }
+      )
+    }
+  }, [playAnimation])
 
   const headingText = "Where Great Food Meets".split(" ")
 
@@ -46,12 +48,12 @@ export default function Hero() {
         <motion.h1 
           className="text-6xl sm:text-7xl md:text-9xl font-serif font-bold text-white tracking-tight leading-none mb-8 flex flex-wrap justify-center gap-x-4 gap-y-2"
           initial="hidden"
-          animate="visible"
+          animate={playAnimation ? "visible" : "hidden"}
           variants={{
             hidden: { opacity: 1 },
             visible: {
               opacity: 1,
-              transition: { staggerChildren: 0.1, delayChildren: 0.5 }
+              transition: { staggerChildren: 0.1, delayChildren: 0.2 }
             }
           }}
         >

@@ -70,6 +70,19 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 to={item.href}
+                onClick={(e) => {
+                  if (item.href.includes('#')) {
+                    const id = item.href.split('#')[1];
+                    const element = document.getElementById(id);
+                    if (element) {
+                      e.preventDefault();
+                      // If we are not on home page, let it navigate normally
+                      if (window.location.pathname === '/') {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                  }
+                }}
                 className="text-sm uppercase tracking-[0.2em] font-medium text-white hover:text-primary transition-colors whitespace-nowrap"
               >
                 {item.name}
@@ -112,8 +125,20 @@ export default function Navbar() {
             <Link
               key={link.name}
               to={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-3xl font-serif text-white hover:text-primary transition-colors uppercase"
+              onClick={(e) => {
+                if (link.href.includes('#')) {
+                  const id = link.href.split('#')[1];
+                  const element = document.getElementById(id);
+                  if (element) {
+                    e.preventDefault();
+                    if (window.location.pathname === '/') {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }
+                setMobileMenuOpen(false);
+              }}
+              className="text-xl uppercase tracking-[0.2em] font-medium text-white hover:text-primary transition-colors text-center"
             >
               {link.name}
             </Link>
