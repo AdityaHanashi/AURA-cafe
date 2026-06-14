@@ -15,8 +15,9 @@ export default function ContactPage() {
       <Helmet>
         <title>Contact Us | Aura Premium Cafe & Restaurant</title>
         <meta name="description" content="Get in touch with Aura Premium Cafe & Restaurant. Locate our venue, check operating hours, or send us a message directly online." />
+        <body className="subpage" />
       </Helmet>
-      <div className="relative min-h-screen text-white">
+      <div className="relative z-0 min-h-screen text-white">
         <div 
           className="fixed inset-0 -z-10 bg-black/60 bg-blend-overlay"
           style={{ 

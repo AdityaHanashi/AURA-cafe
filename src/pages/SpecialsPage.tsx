@@ -29,8 +29,9 @@ export default function SpecialsPage() {
       <Helmet>
         <title>Today's Specials | Aura Premium Cafe & Restaurant</title>
         <meta name="description" content="Explore today's exclusive special creations at Aura, including A5 Wagyu Beef Pizza, Lobster Thermidor Slices, and Premium Caviar & Burrata." />
+        <body className="subpage" />
       </Helmet>
-      <div className="relative min-h-screen text-white">
+      <div className="relative z-0 min-h-screen text-white">
         <div 
           className="fixed inset-0 -z-10 bg-black/60 bg-blend-overlay"
           style={{ 

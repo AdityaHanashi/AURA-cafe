@@ -14,8 +14,9 @@ export default function AboutPage() {
       <Helmet>
         <title>About Us - Our Story | Aura Premium Cafe & Restaurant</title>
         <meta name="description" content="Learn about Aura's culinary journey, our master chef Antonio's rich background, and our commitment to absolute hygiene and premium ingredients." />
+        <body className="subpage" />
       </Helmet>
-      <div className="relative min-h-screen text-white">
+      <div className="relative z-0 min-h-screen text-white">
         <div 
           className="fixed inset-0 -z-10 bg-black/60 bg-blend-overlay"
           style={{ 

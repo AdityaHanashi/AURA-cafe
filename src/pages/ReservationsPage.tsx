@@ -16,8 +16,9 @@ export default function ReservationsPage() {
       <Helmet>
         <title>Reserve a Table | Aura Premium Cafe & Restaurant</title>
         <meta name="description" content="Book your premium dining table online at Aura Cafe & Restaurant. Choose your preferred date, time, and guest count for a fine dining experience." />
+        <body className="subpage" />
       </Helmet>
-      <div className="relative min-h-screen text-white">
+      <div className="relative z-0 min-h-screen text-white">
         <div 
           className="fixed inset-0 -z-10 bg-black/60 bg-blend-overlay"
           style={{ 

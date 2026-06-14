@@ -14,8 +14,9 @@ export default function MenuPage() {
       <Helmet>
         <title>Our Menu | Aura Premium Cafe & Restaurant</title>
         <meta name="description" content="Discover Aura's menu including our Artisan Pizzas, Signature Pour-over Coffees, specialty drinks, and mouth-watering desserts." />
+        <body className="subpage" />
       </Helmet>
-      <div className="relative min-h-screen text-white">
+      <div className="relative z-0 min-h-screen text-white">
         <div 
           className="fixed inset-0 -z-10 bg-black/80 bg-blend-overlay"
           style={{ 
