@@ -27,7 +27,8 @@ export default function SpecialsPage() {
   return (
     <PageTransition>
       <Helmet>
-        <title>Specials | Premium Cafe & Restaurant</title>
+        <title>Today's Specials | Aura Premium Cafe & Restaurant</title>
+        <meta name="description" content="Explore today's exclusive special creations at Aura, including A5 Wagyu Beef Pizza, Lobster Thermidor Slices, and Premium Caviar & Burrata." />
       </Helmet>
       <div 
         className="min-h-screen bg-black/60 bg-blend-overlay text-white relative z-10"

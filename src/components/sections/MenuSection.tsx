@@ -35,14 +35,14 @@ export default function MenuSection() {
   return (
     <section className="py-24 bg-transparent text-white relative z-10">
       <div className="container mx-auto px-6">
-        <motion.h2 
+        <motion.h1 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-5xl md:text-7xl font-serif font-bold text-center mb-20 text-primary"
         >
           Our Menu
-        </motion.h2>
+        </motion.h1>
 
         <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
           {categories.map((cat, i) => (

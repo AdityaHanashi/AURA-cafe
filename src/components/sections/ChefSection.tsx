@@ -58,7 +58,7 @@ export default function ChefSection() {
               transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
               src="/pizza.png" 
               alt="Pizza" 
-              className="absolute -bottom-10 -left-10 w-48 h-48 drop-shadow-2xl" 
+              className="absolute -bottom-10 -left-10 w-48 h-48 rounded-full object-cover drop-shadow-2xl" 
             />
           </motion.div>
         </div>

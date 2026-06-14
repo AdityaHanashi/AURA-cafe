@@ -12,7 +12,8 @@ export default function AboutPage() {
   return (
     <PageTransition>
       <Helmet>
-        <title>About Us | Premium Cafe & Restaurant</title>
+        <title>About Us - Our Story | Aura Premium Cafe & Restaurant</title>
+        <meta name="description" content="Learn about Aura's culinary journey, our master chef Antonio's rich background, and our commitment to absolute hygiene and premium ingredients." />
       </Helmet>
       <div 
         className="min-h-screen bg-black/60 bg-blend-overlay text-white"

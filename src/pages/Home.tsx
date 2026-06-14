@@ -39,8 +39,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Premium Cafe & Restaurant | Aura</title>
-        <meta name="description" content="Experience the finest culinary creations in our premium cafe and restaurant." />
+        <title>Aura | Premium Cafe & Restaurant</title>
+        <meta name="description" content="Welcome to Aura - A premium dining experience featuring Master Chef Antonio's signature dishes, handcrafted pizzas, single-origin coffees, and a vibrant menu. Book your table today." />
       </Helmet>
       
       {/* Intro Overlay - Mounts immediately without fade-in */}

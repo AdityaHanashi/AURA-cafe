@@ -13,7 +13,8 @@ export default function ContactPage() {
   return (
     <PageTransition>
       <Helmet>
-        <title>Contact Us | Premium Cafe & Restaurant</title>
+        <title>Contact Us | Aura Premium Cafe & Restaurant</title>
+        <meta name="description" content="Get in touch with Aura Premium Cafe & Restaurant. Locate our venue, check operating hours, or send us a message directly online." />
       </Helmet>
       <div 
         className="min-h-screen bg-black/60 bg-blend-overlay text-white"

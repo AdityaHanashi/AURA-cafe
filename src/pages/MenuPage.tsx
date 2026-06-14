@@ -12,7 +12,8 @@ export default function MenuPage() {
   return (
     <PageTransition>
       <Helmet>
-        <title>Menu | Premium Cafe & Restaurant</title>
+        <title>Our Menu | Aura Premium Cafe & Restaurant</title>
+        <meta name="description" content="Discover Aura's menu including our Artisan Pizzas, Signature Pour-over Coffees, specialty drinks, and mouth-watering desserts." />
       </Helmet>
       <div 
         className="min-h-screen bg-black/80 bg-blend-overlay"
