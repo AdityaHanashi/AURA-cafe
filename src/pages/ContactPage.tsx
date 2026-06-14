@@ -16,10 +16,17 @@ export default function ContactPage() {
         <title>Contact Us | Aura Premium Cafe & Restaurant</title>
         <meta name="description" content="Get in touch with Aura Premium Cafe & Restaurant. Locate our venue, check operating hours, or send us a message directly online." />
       </Helmet>
-      <div 
-        className="min-h-screen bg-black/60 bg-blend-overlay text-white"
-        style={{ backgroundImage: 'url(/bg_cake.png)', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}
-      >
+      <div className="relative min-h-screen text-white">
+        <div 
+          className="fixed inset-0 -z-10 bg-black/60 bg-blend-overlay"
+          style={{ 
+            backgroundImage: 'url(/bg_cake.png)', 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center',
+            transform: 'translateZ(0)',
+            willChange: 'transform'
+          }}
+        />
         <Navbar />
         <div className="pt-32 pb-20 container mx-auto px-6 max-w-2xl text-center">
           <motion.h1 

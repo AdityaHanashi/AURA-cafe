@@ -44,16 +44,17 @@ export default function IntroExperience({ onComplete }: IntroProps) {
         {toppings.map(t => (
           <motion.div
             key={t.id}
-            className={`absolute rounded-full ${t.isLeaf ? 'bg-green-700/80 rounded-tl-full rounded-br-full' : 'bg-[#a3221b] border-2 border-[#80130d]'} drop-shadow-xl`}
+            className={`absolute rounded-full ${t.isLeaf ? 'bg-green-700/80 rounded-tl-full rounded-br-full' : 'bg-[#a3221b] border-2 border-[#80130d]'}`}
             style={{ 
               width: t.size, 
               height: t.isLeaf ? t.size * 0.6 : t.size,
               left: `${t.x}%`,
-              top: '-10%'
+              top: '-10%',
+              willChange: "transform, opacity"
             }}
             initial={{ y: 0, rotate: t.rotate, opacity: 0 }}
             animate={{ 
-              y: phase !== 'initial' ? window.innerHeight + 100 : 0,
+              y: phase !== 'initial' ? '110vh' : 0,
               rotate: t.rotate + 360,
               opacity: phase === 'initial' ? 0 : phase === 'complete' ? 0 : 1
             }}
@@ -77,11 +78,12 @@ export default function IntroExperience({ onComplete }: IntroProps) {
             opacity: phase === 'complete' ? 0 : 1
           }}
           transition={{ duration: phase === 'complete' ? 1 : 1.8, ease: "easeOut" }}
-          style={{ transformStyle: 'preserve-3d' }}
+          style={{ transformStyle: 'preserve-3d', willChange: "transform, opacity" }}
         >
           {/* Main Pizza Body */}
           <motion.div 
-            className="absolute w-[80%] h-[80%] rounded-full overflow-hidden drop-shadow-2xl"
+            className="absolute w-[80%] h-[80%] rounded-full overflow-hidden shadow-2xl"
+            style={{ willChange: "transform, opacity" }}
           >
             <div 
               className="w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"

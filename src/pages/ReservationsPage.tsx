@@ -17,10 +17,17 @@ export default function ReservationsPage() {
         <title>Reserve a Table | Aura Premium Cafe & Restaurant</title>
         <meta name="description" content="Book your premium dining table online at Aura Cafe & Restaurant. Choose your preferred date, time, and guest count for a fine dining experience." />
       </Helmet>
-      <div 
-        className="min-h-screen bg-black/60 bg-blend-overlay"
-        style={{ backgroundImage: 'url(/bg_juice.png)', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}
-      >
+      <div className="relative min-h-screen text-white">
+        <div 
+          className="fixed inset-0 -z-10 bg-black/60 bg-blend-overlay"
+          style={{ 
+            backgroundImage: 'url(/bg_juice.png)', 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center',
+            transform: 'translateZ(0)',
+            willChange: 'transform'
+          }}
+        />
         <Navbar />
         <div className="pt-32 pb-20 container mx-auto px-6 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-8 text-primary">Reserve a Table</h1>

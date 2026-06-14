@@ -30,10 +30,17 @@ export default function SpecialsPage() {
         <title>Today's Specials | Aura Premium Cafe & Restaurant</title>
         <meta name="description" content="Explore today's exclusive special creations at Aura, including A5 Wagyu Beef Pizza, Lobster Thermidor Slices, and Premium Caviar & Burrata." />
       </Helmet>
-      <div 
-        className="min-h-screen bg-black/60 bg-blend-overlay text-white relative z-10"
-        style={{ backgroundImage: 'url(/bg_fries.png)', backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}
-      >
+      <div className="relative min-h-screen text-white">
+        <div 
+          className="fixed inset-0 -z-10 bg-black/60 bg-blend-overlay"
+          style={{ 
+            backgroundImage: 'url(/bg_fries.png)', 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center',
+            transform: 'translateZ(0)',
+            willChange: 'transform'
+          }}
+        />
         <Navbar />
         <div className="pt-32 pb-20 container mx-auto px-6 max-w-4xl">
           <motion.h1 
