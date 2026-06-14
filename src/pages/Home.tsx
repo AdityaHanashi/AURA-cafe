@@ -48,7 +48,7 @@ export default function Home() {
         {showIntro && (
           <motion.div 
             className="fixed inset-0 z-[100] bg-black overflow-hidden flex items-center justify-center"
-            exit={{ opacity: 0, filter: "blur(10px)" }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
             <IntroExperience onComplete={handleIntroComplete} />
@@ -56,17 +56,22 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* Main Content (Always Mounted) */}
+      {/* Main Content */}
       <PageTransition>
         <div className="bg-background min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-grow">
             <Hero playAnimation={!showIntro} />
-            <FeaturedSection />
-            <ChefSection />
-            <GallerySection />
+            {/* Lazy mount heavy sections ONLY after intro finishes to save mobile CPU */}
+            {!showIntro && (
+              <>
+                <FeaturedSection />
+                <ChefSection />
+                <GallerySection />
+              </>
+            )}
           </main>
-          <Footer />
+          {!showIntro && <Footer />}
         </div>
       </PageTransition>
     </>

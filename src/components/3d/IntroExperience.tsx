@@ -21,15 +21,21 @@ export default function IntroExperience({ onComplete }: IntroProps) {
     }
   }, [onComplete])
 
-  // Generate random toppings (pepperonis, basil leaves)
-  const toppings = Array.from({ length: 20 }).map((_, i) => ({
-    id: i,
-    x: Math.random() * 100, // percentage
-    delay: Math.random() * 1.5,
-    size: Math.random() * 20 + 20,
-    rotate: Math.random() * 360,
-    isLeaf: Math.random() > 0.7
-  }))
+  // Generate random toppings once to prevent re-renders
+  const toppings = React.useMemo(() => {
+    // Reduce toppings on mobile for performance
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const count = isMobile ? 8 : 20;
+    
+    return Array.from({ length: count }).map((_, i) => ({
+      id: i,
+      x: Math.random() * 100, // percentage
+      delay: Math.random() * 1.5,
+      size: Math.random() * 20 + 20,
+      rotate: Math.random() * 360,
+      isLeaf: Math.random() > 0.7
+    }))
+  }, [])
 
   return (
     <motion.div className="relative w-full h-screen bg-black overflow-hidden flex items-center justify-center z-50">
